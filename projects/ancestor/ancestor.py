@@ -1,9 +1,17 @@
 # so we look for what values we can point to tuples are (3, 5) we want are start location to be second in tuple and destination as first
+from collections import deque
 
 
 def earliest_ancestor(ancestors, starting_node):
-    print(ancestors)
-    print(starting_node)
+    stack = deque()
+    current = starting_node
+    stack.append(current)
+    while len(stack) > 0:
+        for ancestor in ancestors:
+            if ancestor[1] == current:
+                current = ancestor[0]
+                stack.append(current)
+
 
 test_ancestors = [(1, 3), (2, 3), (3, 6), (5, 6), (5, 7),
                   (4, 5), (4, 8), (8, 9), (11, 8), (10, 1)]
