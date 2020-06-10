@@ -48,7 +48,7 @@ def earliest_ancestor(ancestors, starting_node):
                                 cleaning = False
                 else:
                     cleaning = False
-
+# [[3, 5], ]
             path.append(current)
             if len(current_array) != 0:
                 stack.append(current_array)
